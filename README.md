@@ -99,7 +99,7 @@ without_fine_tuning.py
 
 ## Datasets
 
-* [cBioPortal](http://http://www.cbioportal.org/) - Cancer Genomics Datasets
+* [cBioPortal](https://www.cbioportal.org/) - Cancer Genomics Datasets
 * [Breast Invasive Carcinoma (TCGA, Cell 2015)](http://www.cbioportal.org/study?id=brca_tcga_pub2015) - Clinical information is used to label various molecular subtypes
 
 ``` Breast Invasive Carcinoma (BRCA) ```
