@@ -1,0 +1,11 @@
+TCGA-C8-A26X-01
+TCGA-C8-A26Y-01
+TCGA-D8-A13Z-01
+TCGA-D8-A1JF-01
+TCGA-EW-A1OV-01
+TCGA-GM-A2DB-01
+TCGA-GM-A2DH-01
+TCGA-LL-A5YO-01
+
+N.B: Those eight samples were present in both Triple-Neg and Her2-Enriched. 
+However, in this project we considered those eight samples as triple negetive.
