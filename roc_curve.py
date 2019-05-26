@@ -131,29 +131,10 @@ for train_index, test_index in skf.split(X, y):
            
        ################################# OVER SAMPLING ###############################
       
-       sm = SMOTE(ratio=1, random_state=seed, kind='borderline1')
+       sm = SMOTE(sampling_strategy='auto', kind='borderline1', random_state=seed)
        x_train, y_train = sm.fit_sample(x_train, y_train)
        #oversample only traning data
-       
-       '''
-       sm = SMOTEENN(ratio=1, random_state=seed)
-       x_train, y_train = sm.fit_sample(x_train, y_train)
-       '''
-
-       '''
-       sm = SMOTETomek(ratio=1, random_state=seed)
-       x_train, y_train = sm.fit_sample(x_train, y_train)
-       '''
-
-       '''
-       sm=RandomOverSampler(ratio=1, random_state=seed)
-       x_train, y_train = sm.fit_sample(x_train, y_train)
-       '''
-       
-       '''
-       sm=ADASYN(ratio=1, random_state=seed, n_neighbors=5, n_jobs=1)
-       x_train, y_train = sm.fit_sample(x_train, y_train)
-       '''
+      
        print('Resampled dataset shape for Train {}'.format(Counter(y_train)))
        print('Resampled dataset shape for Test {}'.format(Counter(y_test)))
        
