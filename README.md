@@ -4,7 +4,7 @@
 ![python version](https://img.shields.io/badge/python-2.7%20%7C%203.5%20-green.svg)
 ![keras version](https://img.shields.io/badge/keras-2.0.6-brightgreen.svg)
 ![tensorflow version](https://img.shields.io/badge/tensorflow-1.13.1-orange.svg)
-![imblearn version](https://img.shields.io/badge/imb--learn-0.4.3-blue.svg)
+![imblearn version](https://img.shields.io/badge/imbalanced--learn-0.4.3-blue.svg)
 
 In this project, we demonstrate how adversarial auto-encoder (AAE) model can be used to extract the features from high dimensional genetic (omics) data. We evaluated the performance of the model through twelve diﬀerent supervised classiﬁers to verify the usefulness of the new features in breast cancer subtypes prediction.
 
