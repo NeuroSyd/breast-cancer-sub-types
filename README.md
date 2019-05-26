@@ -30,7 +30,7 @@ The following libraries are required to reproduce this project:
 
 5) Numpy (1.16.3)
 
-6) Imbalanced-Learn (0.0.3)
+6) Imbalanced-Learn (0.4.3)
 
 Supports both Python 2.7.0 and Python 3.5.6
 
