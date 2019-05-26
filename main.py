@@ -185,7 +185,7 @@ for train_index, test_index in skf.split(X, y):
        						   loss_function="binary_crossentropy", nb_epoch=100, 
        						   batch_size=20, path='./feature_extraction/shallowAE/'+aaenum+'/')
 
-       #do not require fine tuning since this autoencoder does not have any hidden layer
+       ####### don't use the following lines when autoencoder requires fine tuning
        shallow_autoencoder = load_model('./feature_extraction/shallowAE/'+aaenum+'/shallow_encoder'+'.h5')
        x_train = shallow_autoencoder.predict(x_train)
        print('X_Train Shape after ShallowAE :', x_train.shape)
@@ -200,7 +200,7 @@ for train_index, test_index in skf.split(X, y):
        							 loss_function="binary_crossentropy", nb_epoch=100, 
        							 batch_size=20, path='./feature_extractiondenoisingAE/'+aaenum+'/')
 
-       #do not require fine tuning since this autoencoder does not have any hidden layer
+       ####### don't use the following lines when autoencoder requires fine tuning
        denoising_autoencoder = load_model('./results/denoisingAE/'+aaenum+'/denoising_encoder'+'.h5')
 
        x_train = denoising_autoencoder.predict(x_train)
@@ -215,7 +215,7 @@ for train_index, test_index in skf.split(X, y):
                             loss_function="binary_crossentropy", nb_epoch=100, 
                             batch_size=20, path='./feature_extraction/DeepAE/'+aaenum+'/')
        
-       ####### don't need to use the following lines if autoencoder require fine tuning
+       ####### don't use the following lines when autoencoder requires fine tuning
        deep_encoder = load_model('./feature_extraction/DeepAE/'+aaenum+'/deep_autoencoder'+'.h5')
        
        x_train = deep_encoder.predict(x_train)
@@ -228,10 +228,10 @@ for train_index, test_index in skf.split(X, y):
        ##############  AAE  ##############
        
        aae_model('./feature_extraction/AAE/'+aaenum+'/', AdversarialOptimizerSimultaneous(),
-                 xtrain=x_train,ytrain=y_train, xtest=x_test, ytest=y_train, encoded_dim=50,img_dim=x_train.shape[1], nb_epoch=100)          
+                 xtrain=x_train,ytrain=y_train, xtest=x_test, ytest=y_test, encoded_dim=50,img_dim=x_train.shape[1], nb_epoch=100)          
        
        '''
-       ####### don't need to use the following lines if autoencoder require fine tuning
+       ####### don't use the following lines when autoencoder requires fine tuning
        model = load_model('./feature_extraction/AAE/'+aaenum+'/aae_encoder'+'.h5')
 
        x_train = model.predict(x_train)
@@ -246,7 +246,7 @@ for train_index, test_index in skf.split(X, y):
        vae_model_single('./feature_extraction/VAE/'+aaenum+'/',x_train.shape[1],
        					x_train,x_test,intermediate_dim=1000,batch_size=20,latent_dim=50,epochs=100)
 
-       ####### don't need to use the following lines if autoencoder require fine tuning
+       ####### don't use the following lines when autoencoder requires fine tuning
        model = load_model('./feature_extraction/VAE/'+aaenum+'/vae_encoder'+'.h5')
        x_train = model.predict(x_train)
        print('X_Train Shape after VAE :', x_train.shape)
