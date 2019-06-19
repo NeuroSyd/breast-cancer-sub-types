@@ -131,14 +131,42 @@ for train_index, test_index in skf.split(X, y):
            
        ################################# OVER SAMPLING ###############################
       
-       sm = SMOTE(sampling_strategy='auto', kind='borderline1', random_state=seed)
+       sm = SMOTE(sampling_strategy='auto', random_state=seed, kind='borderline1')
        x_train, y_train = sm.fit_sample(x_train, y_train)
        #oversample only traning data
-      
+       
+       '''
+       sm = SMOTEENN(ratio=1, random_state=seed)
+       x_train, y_train = sm.fit_sample(x_train, y_train)
+       '''
+
+       '''
+       sm = SMOTETomek(ratio=1, random_state=seed)
+       x_train, y_train = sm.fit_sample(x_train, y_train)
+       '''
+
+       '''
+       sm=RandomOverSampler(ratio=1, random_state=seed)
+       x_train, y_train = sm.fit_sample(x_train, y_train)
+       '''
+       
+       '''
+       sm=ADASYN(ratio=1, random_state=seed, n_neighbors=5, n_jobs=1)
+       x_train, y_train = sm.fit_sample(x_train, y_train)
+       '''
        print('Resampled dataset shape for Train {}'.format(Counter(y_train)))
        print('Resampled dataset shape for Test {}'.format(Counter(y_test)))
        
        
+ 
+
+       #############################  FEATURE SCALING/NORMALIZATION ##################
+
+       qt = QuantileTransformer(n_quantiles=10, random_state=seed)
+       qt.fit(x_train)
+       x_train=qt.transform(x_train)
+       x_test=qt.transform(x_test)
+
        #use this when train denoising autoencoder
        #use either gaussian mix or zero mix
 
@@ -149,14 +177,7 @@ for train_index, test_index in skf.split(X, y):
        #x_test_noisy=gaussian_mix(x_test)
        #n_samples, n_features = x_train.shape
 
-       #############################  FEATURE SCALING/NORMALIZATION ##################
 
-       qt = QuantileTransformer(n_quantiles=10, random_state=seed)
-       qt.fit(x_train)
-       x_train=qt.transform(x_train)
-       x_test=qt.transform(x_test)
-
-      
        '''
        # Standart Scaling
        sc = StandardScaler()
@@ -188,7 +209,7 @@ for train_index, test_index in skf.split(X, y):
        						   loss_function="binary_crossentropy", nb_epoch=100, 
        						   batch_size=20, path='./feature_extraction/shallowAE/'+aaenum+'/')
 
-       ####### don't use the following lines when autoencoder requires fine tuning
+       #do not require fine tuning since this autoencoder does not have any hidden layer
        shallow_autoencoder = load_model('./feature_extraction/shallowAE/'+aaenum+'/shallow_encoder'+'.h5')
        x_train = shallow_autoencoder.predict(x_train)
        print('X_Train Shape after ShallowAE :', x_train.shape)
@@ -219,7 +240,7 @@ for train_index, test_index in skf.split(X, y):
                             loss_function="binary_crossentropy", nb_epoch=100, 
                             batch_size=20, path='./feature_extraction/DeepAE/'+aaenum+'/')
        
-       ####### don't use the following lines when autoencoder requires fine tuning
+       ####### don't need to use the following lines if autoencoder require fine tuning
        deep_encoder = load_model('./feature_extraction/DeepAE/'+aaenum+'/deep_autoencoder'+'.h5')
        
        x_train = deep_encoder.predict(x_train)
@@ -230,12 +251,12 @@ for train_index, test_index in skf.split(X, y):
        '''
        
        ##############  AAE  ##############
-       
-       aae_model('./feature_extraction/AAE/'+aaenum+'/', AdversarialOptimizerSimultaneous(),
-                 xtrain=x_train,ytrain=y_train, xtest=x_test, ytest=y_test, encoded_dim=50,img_dim=x_train.shape[1], nb_epoch=100)          
-       
        '''
-       ####### don't use the following lines when autoencoder requires fine tuning
+       aae_model('./feature_extraction/AAE/'+aaenum+'/', AdversarialOptimizerSimultaneous(),
+                 xtrain=x_train,ytrain=y_train, xtest=x_test, ytest=y_train, encoded_dim=50,img_dim=x_train.shape[1], nb_epoch=100)          
+       
+       
+       ####### don't need to use the following lines if autoencoder require fine tuning
        model = load_model('./feature_extraction/AAE/'+aaenum+'/aae_encoder'+'.h5')
 
        x_train = model.predict(x_train)
@@ -250,21 +271,31 @@ for train_index, test_index in skf.split(X, y):
        vae_model_single('./feature_extraction/VAE/'+aaenum+'/',x_train.shape[1],
        					x_train,x_test,intermediate_dim=1000,batch_size=20,latent_dim=50,epochs=50)
        '''
-       '''
-       ####### don't use the following lines when autoencoder requires fine tuning
-       model = load_model('./feature_extraction/VAE/'+aaenum+'/vae_encoder'+'.h5')
+       
+       ####### don't need to use the following lines if autoencoder require fine tuning
+       model = load_model('./feature_extraction/AAE/'+aaenum+'/aae_encoder'+'.h5')
        x_train = model.predict(x_train)
-       print('X_Train Shape after VAE :', x_train.shape)
+       print('X_Train Shape after AAE :', x_train.shape)
        x_test = model.predict(x_test)
-       print('X_Test Shape after VAE :', x_test.shape)
-       '''
+       print('X_Test Shape after AAE :', x_test.shape)
+       
        
        ########################    CLASSIFICATION    ##########################
        
        ####### use one classifier at a time  ########
        clf=RandomForestClassifier(criterion='entropy', n_estimators=100, random_state=seed)
-       
-             
+       #clf=KNeighborsClassifier(3)
+       #clf=DecisionTreeClassifier(random_state=seed)
+       #clf=RandomForestClassifier(criterion='entropy', n_estimators=100, random_state=seed)
+       #clf=XGBClassifier(learning_rate=0.001,max_depth=4,n_estimators=100, nthread=1, subsample=0.65)
+       #clf=GradientBoostingClassifier(random_state=seed)
+       #clf=GaussianNB()
+       #clf=LinearDiscriminantAnalysis(),
+       #clf=QuadraticDiscriminantAnalysis(),
+       #clf=SVC(kernel='rbf', probability=True, random_state=seed),
+       #clf=LogisticRegression(C=0.1, multi_class= 'multinomial', solver='sag', random_state=seed),
+       #clf=MLPClassifier(hidden_layer_sizes=(500), random_state=seed, verbose=True, activation='tanh', solver='adam', alpha=0.0001, batch_size='auto'),
+       #clf=VotingClassifier(estimators=[('MLP', MLPClassifier(hidden_layer_sizes=(500), random_state=seed, verbose=True, activation='tanh', solver='adam', alpha=0.0001, batch_size='auto')), ('LDA', LinearDiscriminantAnalysis()), ('LR', LogisticRegression(C=0.1, multi_class= 'multinomial', solver='sag', random_state=seed))], voting='soft')
        ###################################################################
        ## Multiclass ROC with Cross Val
        ###################################################################
