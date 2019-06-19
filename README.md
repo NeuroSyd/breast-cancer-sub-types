@@ -92,6 +92,45 @@ And run the following when model already fine tuned
 without_fine_tuning.py
 ```
 
+### Benchmarking Code
+
+```
+import timeit
+start_time = timeit.default_timer()
+import psutil
+import os
+....................
+....................
+....................
+.... your code .....
+....................
+....................
+....................
+###### COMPUTATION TIME ########
+print('Wall Clock Time')
+print ((end_time - start_time), 'Sec')
+time=(end_time - start_time)
+minutes = time // 60
+time %= 60
+seconds = time
+print(minutes, 'Minutes', seconds,'Seconds')
+
+########  CPU USAGE #######
+print('CPU Usage') 
+print(psutil.cpu_percent(), '%')
+print('THE END')
+```
+To know the MEMORY USAGE please follow the instruction below:
+
+Install memory profiler library: https://pypi.org/project/memory-profiler/ then run the following command.
+
+```
+mprof run main.py
+```
+Finally see the memory usage by running:
+```
+mprof plot
+```
 
 ## Proposed Workflow
 
