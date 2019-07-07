@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Data for plotting
-dataset = pd.read_csv('./result_data/aae_loss.csv')
+dataset = pd.read_csv('./figure_data/aae_loss.csv')
 x = dataset.iloc[0:100,0].values # no. of epoch
 y1 = dataset.iloc[0:100,1].values # training loss single layer
 y2 = dataset.iloc[0:100,2].values # validation loss single layer
