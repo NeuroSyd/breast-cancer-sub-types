@@ -12,7 +12,7 @@ import pandas as pd
 #sns.set()
 sns.set(style="whitegrid")
 
-data=pd.read_csv('./result_data/data_precision.csv')
+data=pd.read_csv('./figure_data/data_precision.csv')
 
 
 
