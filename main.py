@@ -41,7 +41,7 @@ from keras.layers import Input, Dense
 from keras.models import Model, load_model
 from keras_adversarial import AdversarialOptimizerSimultaneous, normal_latent_sampling
 from variational_autoencoder import *
-from aae_architechture import *
+from aae_architechture_proposed import *
 from deep_autoencoder import *
 from denoising_autoencoder import *
 from shallow_autoencoder import *
