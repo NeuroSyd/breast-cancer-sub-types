@@ -11,7 +11,7 @@ import pandas as pd
 import seaborn as sns
 sns.set(style="whitegrid")
 
-data=pd.read_csv('./result_data/log_loss_data.csv')
+data=pd.read_csv('./figure_data/log_loss_data.csv')
 
 ax = sns.boxplot(x="Metrics", y="Score", hue="Method", data=data, palette="Set2", linewidth=2)
 
