@@ -134,7 +134,7 @@ mprof plot
 
 ## Proposed Workflow
 
-![workflow_new](https://user-images.githubusercontent.com/28592095/60767759-6437e480-a0ff-11e9-90d1-5cbc95bf4a51.png)
+![workflow_new](https://user-images.githubusercontent.com/28592095/60767809-5e8ece80-a100-11e9-8d5b-a348d9b61f59.png)
 
 
 ## Datasets
