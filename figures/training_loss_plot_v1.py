@@ -8,7 +8,7 @@ Created on Wed Dec 19 19:13:32 2018
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-dataset = pd.read_csv('./result_data/aae_loss.csv', low_memory=False, dtype=float)
+dataset = pd.read_csv('./figure_data/aae_loss.csv', low_memory=False, dtype=float)
 x = dataset.iloc[0:100,0].values  #First row then column from dataset
 
 y1= dataset.iloc[0:100,1].values   #First row then column from dataset
