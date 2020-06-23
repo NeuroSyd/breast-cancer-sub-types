@@ -149,7 +149,7 @@ mprof plot
 | Luminal A | 304 | 0 |
 | Luminal B | 121 | 1 |
 | Basal & Triple Negetive | 137 | 2 |
-| Her 2 Enriched | 43 | 3 |
+| Her 2 Positive | 43 | 3 |
 
 | Total Number of Samples (Patients) | Total Number of Features (Genes) |
 | :------------------: | :------------------: |
