@@ -23,6 +23,7 @@ The following libraries are required to reproduce this project:
 1) Keras (2.0.6)
 
 2) Keras-adverserial (0.0.3)
+Download Link: https://github.com/bstriner/keras-adversarial
 
 3) Tensorflow (1.13.1)
 
