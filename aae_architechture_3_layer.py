@@ -90,9 +90,7 @@ def aae_model(path, adversarial_optimizer,xtrain,ytrain,xtest,ytest,encoded_dim=
     # train network
     n = xtrain.shape[0]
     y = [xtrain, np.ones((n, 1)), np.zeros((n, 1)), xtrain, np.zeros((n, 1)), np.ones((n, 1))]
-    ntest = xtest.shape[0]
-    ytest = [xtest, np.ones((ntest, 1)), np.zeros((ntest, 1)), xtest, np.zeros((ntest, 1)), np.ones((ntest, 1))]
-    history = model.fit(x=xtrain, y=y, validation_data=(xtest, ytest), epochs=nb_epoch, batch_size=128, shuffle=False)
+    history = model.fit(x=xtrain, y=y, epochs=nb_epoch, batch_size=128, shuffle=False)
     
     # save history
     df = pd.DataFrame(history.history)
