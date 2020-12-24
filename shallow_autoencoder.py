@@ -34,7 +34,6 @@ def shallow_autoencoder_fit(x_train, x_test, encoding_dim=2, optimizer="adadelta
   autoencoder.fit(x_train, x_train,
                   epochs=nb_epoch,
                   batch_size=batch_size,
-                  shuffle=True,
-                  validation_data=(x_test, x_test),
+                  shuffle=True
                   )
   encoder.save(os.path.join(path, "shallow_encoder.h5"))
