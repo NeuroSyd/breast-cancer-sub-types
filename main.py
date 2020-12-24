@@ -161,7 +161,18 @@ for train_index, test_index in skf.split(X, y):
        x_train=sc.transform(x_train)
        x_test=sc.transform(x_test)
        '''   
-          
+       
+       
+       
+       ###############################FEATURE SELECTION ############################
+       '''
+       selector = SelectFromModel(estimator=LinearSVC(), max_features=50).fit(x_train, y_train)
+       
+       #selector = SelectKBest(chi2, k=50).fit(x_train, y_train)
+       x_train = selector.transform(x_train)
+       x_test = selector.transform(x_test)
+       print ('After Feature_Selection', x_train.shape)
+       '''
        ###############################DIMENSION REDUCTION ############################
       
        '''
@@ -295,7 +306,7 @@ for train_index, test_index in skf.split(X, y):
        
        #Here we choose adadelta as optimizer
        new_model.compile(optimizer = 'adadelta', loss = 'categorical_crossentropy', metrics = ['accuracy'])
-       history=new_model.fit(x_train, y_train_binarize, batch_size = 20, epochs = 50, validation_data=(x_test, y_test_binarize)) # for ANN keras
+       history=new_model.fit(x_train, y_train_binarize, batch_size = 20, epochs = 50) # for ANN keras
        score = new_model.evaluate(x_test, y_test_binarize, verbose=1, batch_size=20)   
        
        print("Test Accuracy: \n%s: %.2f%%" % (new_model.metrics_names[1], score[1]*100))
