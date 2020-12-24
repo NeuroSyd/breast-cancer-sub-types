@@ -335,7 +335,7 @@ for train_index, test_index in skf.split(X, y):
        
        #Here we choose adadelta as optimizer
        new_model.compile(optimizer = 'adadelta', loss = 'categorical_crossentropy', metrics = ['accuracy'])
-       history=new_model.fit(x_train, y_train_binarize, batch_size = 20, epochs = 50, validation_data=(x_test, y_test_binarize)) # for ANN keras
+       history=new_model.fit(x_train, y_train_binarize, batch_size = 20, epochs = 50) # for ANN keras
        score = new_model.evaluate(x_test, y_test_binarize, verbose=1, batch_size=20)   
        
        print("Test Accuracy: \n%s: %.2f%%" % (new_model.metrics_names[1], score[1]*100))
