@@ -10,7 +10,7 @@ In this project, we demonstrate how adversarial auto-encoder (AAE) model can be 
 
 ![project_logo_transparent](https://user-images.githubusercontent.com/28592095/56498063-8039da00-6543-11e9-8b4a-a551bad3ed0f.png)
 
-
+For Bioloogical Insight Please visit: https://github.com/NeuroSyd/latent-space-discovery
 
 ## Getting Started
 
