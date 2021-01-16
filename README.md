@@ -8,9 +8,11 @@
 
 In this project, we demonstrate how adversarial auto-encoder (AAE) model can be used to extract the features from high dimensional genetic (omics) data. We evaluated the performance of the model through twelve diﬀerent supervised classiﬁers to verify the usefulness of the new features in breast cancer subtypes prediction.
 
+For Bioloogical Insight Please visit: https://github.com/NeuroSyd/latent-space-discovery
+
 ![project_logo_transparent](https://user-images.githubusercontent.com/28592095/56498063-8039da00-6543-11e9-8b4a-a551bad3ed0f.png)
 
-For Bioloogical Insight Please visit: https://github.com/NeuroSyd/latent-space-discovery
+
 
 ## Getting Started
 
