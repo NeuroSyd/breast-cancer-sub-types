@@ -34,7 +34,6 @@ def denoising_autoencoder_fit(x_train, x_test, x_train_noisy, x_test_noisy, enco
   autoencoder.fit(x_train_noisy, x_train,
                   epochs=nb_epoch,
                 	batch_size=batch_size,
-                	shuffle=True,
-                	validation_data=(x_test_noisy, x_test),
+                	shuffle=True
                 	)
   encoder.save(os.path.join(path, "denoising_encoder.h5"))
