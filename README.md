@@ -169,3 +169,18 @@ If you want to contribute to this project and make it better, your help is very 
 
 * The proposed architecture is inspired by https://github.com/bstriner/keras-adversarial
 
+## Paper Link: https://ieeexplore.ieee.org/document/9378938
+
+If you find this code useful in your research, please consider citing:
+
+@ARTICLE{9378938,
+  author={R. K. {Mondol} and N. D. {Truong} and M. {Reza} and S. {Ippolito} and E. {Ebrahimie} and O. {Kavehei}},
+  journal={IEEE/ACM Transactions on Computational Biology and Bioinformatics}, 
+  title={AFExNet: An Adversarial Autoencoder for Differentiating Breast Cancer Sub-types and Extracting Biologically Relevant Genes}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TCBB.2021.3066086}}
+
+
