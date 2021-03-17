@@ -172,7 +172,7 @@ If you want to contribute to this project and make it better, your help is very 
 ## Paper Link: https://ieeexplore.ieee.org/document/9378938
 
 If you find this code useful in your research, please consider citing:
-
+```
 @ARTICLE{9378938,
   author={R. K. {Mondol} and N. D. {Truong} and M. {Reza} and S. {Ippolito} and E. {Ebrahimie} and O. {Kavehei}},
   journal={IEEE/ACM Transactions on Computational Biology and Bioinformatics}, 
@@ -182,5 +182,4 @@ If you find this code useful in your research, please consider citing:
   number={},
   pages={1-1},
   doi={10.1109/TCBB.2021.3066086}}
-
-
+```
