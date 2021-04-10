@@ -22,7 +22,7 @@ The following instructions will get you a copy of the project up and running on 
 
 The following libraries are required to reproduce this project:
 
-1) Keras (2.0.6)
+1) Keras 2.0.6 is recommended but works up to 2.1.2 
 
 2) Keras-adverserial (0.0.3)
 Download Link: https://github.com/bstriner/keras-adversarial
