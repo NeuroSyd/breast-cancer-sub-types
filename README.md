@@ -135,7 +135,7 @@ Finally see the memory usage by running:
 mprof plot
 ```
 
-## Proposed Architechture
+## Proposed Architecture
 
 ![AFExNET](https://user-images.githubusercontent.com/28592095/115665054-821e1a00-a364-11eb-9774-6f72ef5bd589.png)
 
