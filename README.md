@@ -170,7 +170,7 @@ If you want to contribute to this project and make it better, your help is very 
 * The proposed architecture is inspired by https://github.com/bstriner/keras-adversarial
 
 ## Tech Stack
-![tech_stack_banner](https://user-images.githubusercontent.com/28592095/115665430-2011e480-a365-11eb-9474-12db810b0124.png)
+![tech_stack_banner](https://user-images.githubusercontent.com/28592095/115676246-358d0b80-a371-11eb-9482-0752d5a27d3f.png)
 
 
 ## Paper Link: https://ieeexplore.ieee.org/document/9378938
