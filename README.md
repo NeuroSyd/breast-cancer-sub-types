@@ -135,9 +135,9 @@ Finally see the memory usage by running:
 mprof plot
 ```
 
-## Proposed Workflow
+## Proposed Architechture
 
-![workflow_new](https://user-images.githubusercontent.com/28592095/60767809-5e8ece80-a100-11e9-8d5b-a348d9b61f59.png)
+![AFExNET](https://user-images.githubusercontent.com/28592095/115665054-821e1a00-a364-11eb-9774-6f72ef5bd589.png)
 
 
 ## Datasets
@@ -170,6 +170,9 @@ If you want to contribute to this project and make it better, your help is very 
 * The proposed architecture is inspired by https://github.com/bstriner/keras-adversarial
 
 ## Paper Link: https://ieeexplore.ieee.org/document/9378938
+
+## Tech Stack
+
 
 If you find this code useful in your research, please consider citing:
 ```
