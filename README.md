@@ -160,7 +160,7 @@ mprof plot
 
 * [Details about Molecular Subtypes of Breast Cancer](https://www.breastcancer.org/symptoms/types/molecular-subtypes)
 
-## Contributing
+## Contribution
 
 If you want to contribute to this project and make it better, your help is very welcome. When contributing to this repository please make a clean pull request.
 
@@ -169,11 +169,11 @@ If you want to contribute to this project and make it better, your help is very 
 
 * The proposed architecture is inspired by https://github.com/bstriner/keras-adversarial
 
-## Paper Link: https://ieeexplore.ieee.org/document/9378938
-
 ## Tech Stack
+![tech_stack_banner](https://user-images.githubusercontent.com/28592095/115665430-2011e480-a365-11eb-9474-12db810b0124.png)
 
 
+## Paper Link: https://ieeexplore.ieee.org/document/9378938
 If you find this code useful in your research, please consider citing:
 ```
 @ARTICLE{9378938,
