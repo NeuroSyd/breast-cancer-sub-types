@@ -173,7 +173,6 @@ If you want to contribute to this project and make it better, your help is very 
 ![tech_stack_banner](https://user-images.githubusercontent.com/28592095/115676246-358d0b80-a371-11eb-9482-0752d5a27d3f.png)
 
 
-## Paper Link: https://ieeexplore.ieee.org/document/9378938
 If you find this code useful in your research, please consider citing:
 ```
 @ARTICLE{9378938,
