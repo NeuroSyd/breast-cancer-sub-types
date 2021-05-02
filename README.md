@@ -1,4 +1,4 @@
-# AFExNet: An Adversarial Autoencoder for Differentiating Breast Cancer Sub-types and Extracting Biologically Relevant Genes
+# AFExNet: An Adversarial Autoencoder for Differentiating Breast Cancer Sub-types and Extracting Biologically Relevant Genes [Paper Link](https://ieeexplore.ieee.org/document/9378938)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![contribution](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/raktimmondol/breast-cancer-sub-types-classification/pulls)
 ![python version](https://img.shields.io/badge/python-2.7%20%7C%203.5%20-green.svg)
