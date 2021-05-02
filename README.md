@@ -173,8 +173,7 @@ If you want to contribute to this project and make it better, your help is very 
 ![tech_stack_banner](https://user-images.githubusercontent.com/28592095/115676246-358d0b80-a371-11eb-9482-0752d5a27d3f.png)
 
 ## Cite Us: 
-![alt text][logo]
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 If you find this code useful in your research, please consider citing:
 ```
 @ARTICLE{9378938,
