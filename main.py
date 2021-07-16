@@ -112,7 +112,7 @@ def gaussian_mix(x):
 # The above two functions are used to add noise in the data
 # And used to train denoising autoencoder
 
-skf = StratifiedKFold(n_splits=2, shuffle=False, random_state=seed)
+skf = StratifiedKFold(n_splits=5, shuffle=False, random_state=seed)
 skf.get_n_splits(X, y)
 print(skf)
 for train_index, test_index in skf.split(X, y):
