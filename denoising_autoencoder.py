@@ -1,16 +1,16 @@
 
 seed=75
+import os
 import numpy as np
 np.random.seed(seed)
-from tensorflow import set_random_seed
-set_random_seed(seed)
+from tensorflow.compat.v1 import set_random_seed
 from sklearn import model_selection
 from keras.layers import Input, Dense, Lambda
 from keras.models import Model, load_model
 from keras import backend as K
 from keras import metrics
 from keras import callbacks
-import os
+set_random_seed(seed)
 
 def denoising_autoencoder_fit(x_train, x_test, x_train_noisy, x_test_noisy, encoding_dim=2, optimizer="adadelta", loss_function="binary_crossentropy", nb_epoch=4, batch_size=2, path='./saved_models'):
   input_img = Input(shape=(x_train.shape[1],), name="x")
