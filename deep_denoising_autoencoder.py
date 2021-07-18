@@ -1,7 +1,7 @@
 seed=75
 import numpy as np
 np.random.seed(seed)
-from tensorflow import set_random_seed
+from tensorflow.compat.v1 import set_random_seed
 set_random_seed(seed)
 from sklearn import model_selection
 from keras.layers import Input, Dense, Lambda
