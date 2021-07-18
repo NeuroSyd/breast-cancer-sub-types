@@ -227,7 +227,7 @@ for train_index, test_index in skf.split(X, y):
                             batch_size=20, path='./feature_extraction/DeepAE/'+aaenum+'/')
        
        ####### don't use the following lines when autoencoder requires fine tuning
-       deep_encoder = load_model('./feature_extraction/DeepAE/'+aaenum+'/deep_autoencoder'+'.h5')
+       deep_encoder = load_model('./feature_extraction/DeepAE/'+aaenum+'/deep_encoder'+'.h5')
        
        x_train = deep_encoder.predict(x_train)
        print('X_Train Shape after DeepAE :', x_train.shape)
