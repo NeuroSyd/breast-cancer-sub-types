@@ -26,6 +26,7 @@ The following libraries are required to reproduce this project:
 
 2) Keras-adverserial (0.0.3)
 Download Link: https://github.com/bstriner/keras-adversarial
+install by using "python setup.py install" 
 
 3) Tensorflow (1.13.1)
 
