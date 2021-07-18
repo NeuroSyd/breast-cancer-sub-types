@@ -4,7 +4,7 @@ import matplotlib as mpl
 mpl.use('Agg')
 import numpy as np
 np.random.seed(seed)
-from tensorflow import set_random_seed
+from tensorflow.compat.v1 import set_random_seed
 set_random_seed(seed)
 from keras.layers import Dense, Reshape, Flatten, Input, merge, Dropout, LeakyReLU, Activation
 from keras.models import Sequential, Model, load_model
