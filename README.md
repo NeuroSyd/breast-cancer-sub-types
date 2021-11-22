@@ -110,6 +110,9 @@ import os
 ....................
 ....................
 ....................
+start_time = timeit.default_timer()
+
+
 ###### COMPUTATION TIME ########
 print('Wall Clock Time')
 print ((end_time - start_time), 'Sec')
